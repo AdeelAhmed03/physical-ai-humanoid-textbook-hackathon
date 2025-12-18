@@ -1,0 +1,58 @@
+export default async function handler(req, res) {
+  // Get the path from the URL
+  const { path } = req.query;
+  const backendUrl = process.env.BACKEND_URL || 'https://ai-textbook-backend.onrender.com';
+
+  // Construct the full backend URL
+  const targetUrl = `${backendUrl}/api/${Array.isArray(path) ? path.join('/') : path}`;
+
+  // Prepare options for the fetch request
+  const options = {
+    method: req.method,
+    headers: {
+      'Content-Type': 'application/json',
+      // Remove host header to prevent issues
+      ...Object.fromEntries(
+        Object.entries(req.headers).filter(([key]) =>
+          !['host', 'connection', 'accept-encoding'].includes(key.toLowerCase())
+        )
+      ),
+    },
+  };
+
+  // Include body for POST, PUT, PATCH requests
+  if (req.body && (req.method === 'POST' || req.method === 'PUT' || req.method === 'PATCH')) {
+    options.body = JSON.stringify(req.body);
+  }
+
+  try {
+    // Forward the request to the backend
+    const response = await fetch(targetUrl, options);
+
+    // Get response data
+    const data = await response.json();
+
+    // Get headers from the backend response
+    const responseHeaders = {};
+    for (const [key, value] of response.headers.entries()) {
+      if (!['content-encoding', 'content-length', 'transfer-encoding', 'connection'].includes(key.toLowerCase())) {
+        responseHeaders[key] = value;
+      }
+    }
+
+    // Return the response from the backend with proper headers
+    res.status(response.status).setHeaders(responseHeaders).json(data);
+  } catch (error) {
+    console.error('API Proxy Error:', error);
+    res.status(500).json({
+      error: 'Internal Server Error',
+      message: 'Failed to connect to backend service'
+    });
+  }
+}
+
+export const config = {
+  api: {
+    responseLimit: '10mb', // Increase limit for large responses
+  },
+};

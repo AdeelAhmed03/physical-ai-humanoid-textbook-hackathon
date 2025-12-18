@@ -1,0 +1,81 @@
+.container {
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--ifm-heading-color);
+}
+
+.pathSelector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.pathOption {
+  text-align: left;
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pathOption:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pathOption.selected {
+  border-color: var(--ifm-color-primary);
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+.pathHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.pathName {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.pathBadge {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  background-color: var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+}
+
+.pathOption.selected .pathBadge {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.pathDescription {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.recommendation {
+  padding: 1rem;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 6px;
+}
+
+.recommendation h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}

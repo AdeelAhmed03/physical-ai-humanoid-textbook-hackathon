@@ -1,0 +1,125 @@
+.personalizationContainer {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.personalizationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.personalizationHeader h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.personalizeButton {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.personalizeButton:hover {
+  background-color: #5a6268;
+}
+
+.personalizeButton.active {
+  background-color: #28a745;
+}
+
+.preferencesForm {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.formGroup select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.saveButton, .cancelButton, .editButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.saveButton {
+  background-color: #007bff;
+  color: white;
+}
+
+.saveButton:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.saveButton:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.cancelButton, .editButton {
+  background-color: #6c757d;
+  color: white;
+}
+
+.cancelButton:hover, .editButton:hover {
+  background-color: #5a6268;
+}
+
+.currentPreferences {
+  background-color: #e9ecef;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.currentPreferences p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.loginPrompt {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.loginPrompt a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.loginPrompt a:hover {
+  text-decoration: underline;
+}

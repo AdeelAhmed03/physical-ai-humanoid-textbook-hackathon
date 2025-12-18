@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Production builds
+build/
+dist/
+out/
+
+# Environment variables
+.env.local
+.env.*.local
+.env
+*.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docusaurus
+.docusaurus/
+.cache/

@@ -1,0 +1,107 @@
+.translationContainer {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.translationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.translationHeader h3 {
+  margin: 0;
+  color: #856404;
+  font-size: 1.1rem;
+}
+
+.translateButton, .resetButton {
+  background-color: #fd79a8;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.translateButton:hover, .resetButton:hover {
+  background-color: #e84393;
+}
+
+.translateButton:disabled {
+  background-color: #b2bec3;
+  cursor: not-allowed;
+}
+
+.resetButton {
+  background-color: #6c757d;
+}
+
+.resetButton:hover {
+  background-color: #5a6268;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  border: 1px solid #f5c6cb;
+}
+
+.retryButton {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.retryButton:hover {
+  background-color: #c82333;
+}
+
+.translatedContent {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+}
+
+.translationNotice {
+  margin-bottom: 0.5rem;
+  color: #495057;
+  font-weight: bold;
+}
+
+.content {
+  line-height: 1.6;
+}
+
+.content[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+
+.loginPrompt {
+  color: #856404;
+  font-style: italic;
+}
+
+.loginPrompt a {
+  color: #e17055;
+  text-decoration: none;
+}
+
+.loginPrompt a:hover {
+  text-decoration: underline;
+}

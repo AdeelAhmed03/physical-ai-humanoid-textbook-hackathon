@@ -1,0 +1,97 @@
+.bookmark-notes-container {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background-color: var(--ifm-background-surface-color);
+}
+
+.bookmark-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.bookmark-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-right: 0.5rem;
+  color: var(--ifm-color-warning);
+}
+
+.bookmark-button.bookmarked {
+  color: var(--ifm-color-warning);
+  text-shadow: 0 0 2px rgba(255, 193, 7, 0.5);
+}
+
+.bookmark-button:hover {
+  transform: scale(1.1);
+}
+
+.bookmark-label {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.notes-section {
+  margin-top: 1rem;
+}
+
+.notes-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--ifm-heading-color);
+}
+
+.notes-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-family: inherit;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.notes-input:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px var(--ifm-color-primary-lightest);
+}
+
+.save-notes-button {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.save-notes-button:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+/* Dark theme specific styles */
+html[data-theme='dark'] .bookmark-notes-container {
+  background-color: var(--ifm-background-surface-color-dark);
+  border-color: var(--ifm-color-emphasis-600);
+}
+
+html[data-theme='dark'] .bookmark-label {
+  color: var(--ifm-color-emphasis-300);
+}
+
+html[data-theme='dark'] .notes-input {
+  background-color: var(--ifm-background-color-dark);
+  color: var(--ifm-font-color-base-inverse);
+  border-color: var(--ifm-color-emphasis-500);
+}
