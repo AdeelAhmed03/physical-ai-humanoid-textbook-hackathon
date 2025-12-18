@@ -1,7 +1,10 @@
 export default async function handler(req, res) {
   // Get the path from the URL
   const { path } = req.query;
-  const backendUrl = process.env.BACKEND_URL || 'https://ai-textbook-backend.onrender.com';
+
+  // Default backend URL - this should be updated to your Hugging Face Space URL
+  // Example: https://your-username-huggingface-space-name.hf.space
+  const backendUrl = process.env.BACKEND_URL || process.env.NEXT_PUBLIC_BACKEND_URL || 'https://your-huggingface-space-url.hf.space';
 
   // Construct the full backend URL
   const targetUrl = `${backendUrl}/api/${Array.isArray(path) ? path.join('/') : path}`;
@@ -46,7 +49,8 @@ export default async function handler(req, res) {
     console.error('API Proxy Error:', error);
     res.status(500).json({
       error: 'Internal Server Error',
-      message: 'Failed to connect to backend service'
+      message: 'Failed to connect to backend service',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 }

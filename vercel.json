@@ -29,8 +29,8 @@
   ],
   "env": {
     "REACT_APP_BACKEND_URL": "/api",
-    "REACT_APP_ENABLE_CHATBOT": "false",
-    "REACT_APP_ENABLE_SEARCH": "false",
-    "REACT_APP_ENABLE_PERSONALIZATION": "false"
+    "REACT_APP_ENABLE_CHATBOT": "true",
+    "REACT_APP_ENABLE_SEARCH": "true",
+    "REACT_APP_ENABLE_PERSONALIZATION": "true"
   }
 }
