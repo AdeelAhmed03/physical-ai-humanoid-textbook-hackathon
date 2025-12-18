@@ -4,12 +4,8 @@
 
 const config = {
   // API endpoints
-  // In production, this should point to the Vercel API proxy at /api
-  // In development, it might point to the backend server directly
-  API_BASE_URL: process.env.REACT_APP_BACKEND_URL ||
-                (typeof window !== 'undefined' && window.location.hostname !== 'localhost'
-                  ? '/api'
-                  : 'http://localhost:8000'),
+  // When deployed on Vercel, all APIs are available at /api
+  API_BASE_URL: process.env.REACT_APP_BACKEND_URL || '/api',
 
   // Feature flags
   ENABLE_CHATBOT: process.env.REACT_APP_ENABLE_CHATBOT !== 'false',

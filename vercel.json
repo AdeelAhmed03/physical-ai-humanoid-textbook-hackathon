@@ -10,14 +10,17 @@
       }
     },
     {
-      "src": "frontend/api/[[path]].js",
-      "use": "@vercel/node"
+      "src": "frontend/api/**/*.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["src/**/*"]
+      }
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/frontend/api/[[path]].js"
+      "dest": "/api/$1"
     },
     {
       "handle": "filesystem"
@@ -31,6 +34,8 @@
     "REACT_APP_BACKEND_URL": "/api",
     "REACT_APP_ENABLE_CHATBOT": "true",
     "REACT_APP_ENABLE_SEARCH": "true",
-    "REACT_APP_ENABLE_PERSONALIZATION": "true"
+    "REACT_APP_ENABLE_PERSONALIZATION": "true",
+    "OPENAI_API_KEY": "",
+    "NEXT_PUBLIC_OPENAI_API_KEY": ""
   }
 }
