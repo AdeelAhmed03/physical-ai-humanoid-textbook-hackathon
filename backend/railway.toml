@@ -1,0 +1,9 @@
+# Railway deployment configuration
+
+[build]
+builder = "dockerfile"
+dockerfilePath = "./Dockerfile"
+
+[deploy]
+startCommand = "python -m src.main"
+restartPolicyType = "always"

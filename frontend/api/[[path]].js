@@ -2,9 +2,14 @@ export default async function handler(req, res) {
   // Get the path from the URL
   const { path } = req.query;
 
-  // Default backend URL - this should be updated to your Hugging Face Space URL
-  // Example: https://your-username-huggingface-space-name.hf.space
-  const backendUrl = process.env.BACKEND_URL || process.env.NEXT_PUBLIC_BACKEND_URL || 'https://your-huggingface-space-url.hf.space';
+  // Default backend URL - this should be updated to your deployed backend URL
+  // Examples:
+  // Railway: https://your-app-name.up.railway.app
+  // Hugging Face Space: https://your-username-huggingface-space-name.hf.space
+  // Render: https://your-app-name.onrender.com
+  const backendUrl = process.env.BACKEND_URL ||
+                    process.env.NEXT_PUBLIC_BACKEND_URL ||
+                    'https://your-railway-app-name.up.railway.app'; // Update this to your actual backend URL
 
   // Construct the full backend URL
   const targetUrl = `${backendUrl}/api/${Array.isArray(path) ? path.join('/') : path}`;
